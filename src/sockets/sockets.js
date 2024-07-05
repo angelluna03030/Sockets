@@ -23,4 +23,13 @@ io.on('connection', client => {
     client.on('emitir-mensaje', (p) => {
       client.broadcast('nuevo-mensaje', p )
     });
+    client.on('vote-band', (p) => {
+        bands.voteBand(p.id);
+        io.emit('active-bands', bands.getBans())
+      });
+    client.on('add-band', (p) => {
+        const NewBand = new Band(p.name)
+        bands.addBand(NewBand);
+        io.emit('active-bands', bands.getBans())
+        });
 });
