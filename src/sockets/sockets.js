@@ -32,4 +32,9 @@ io.on('connection', client => {
         bands.addBand(NewBand);
         io.emit('active-bands', bands.getBans())
         });
+
+    client.on('delete-band', (p) => {
+            bands.deleteBands(p.id);
+            io.emit('active-bands', bands.getBans())
+            });
 });
