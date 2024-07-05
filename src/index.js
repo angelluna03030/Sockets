@@ -11,8 +11,6 @@ module.exports.io = require('socket.io')(server);
 
 // Cargar configuración de sockets
 require("./sockets/sockets");
-
-// Path público
 const publicPath = path.join(__dirname, "../public");
 
 // Middleware para servir archivos estáticos

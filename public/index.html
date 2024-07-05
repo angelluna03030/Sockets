@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>haceso denegado </h1>
+    <div class="name"></div>
     <script src="socket.io/socket.io.js"></script>
     <script>
         var socket= io();
@@ -23,6 +24,15 @@
         socket.on("mensaje", function(p){
           console.log("Escuchando " , p)
         })
+        socket.on("nuevo-mensaje", function(p){
+          console.log("Escuchando " , p)
+        })
+        socket.on("active-bands", function(p) {
+            console.clear()
+    console.table( p);
+
+});
+
     </script>
 </body>
 </html>
